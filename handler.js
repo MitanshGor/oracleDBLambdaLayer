@@ -25,7 +25,8 @@ module.exports.run_shell_command = async (command) => {
 
 
 console.log('line 5')
-const oracledb = require('/opt/nodejs/node14/node_modules/oracledb')
+const oracledb = require('oracledb')
+// const oracledb = require('/opt/nodejs/node14/node_modules/oracledb')
 console.log('line 6')
 const oracleConfig = {
   user: "ETLSVC",
@@ -54,6 +55,6 @@ module.exports.hello = async (event) => {
   await module.exports.run_shell_command('cd /var/task/lib; ls').then( (res) => console.log('cd /var/task/lib; ls ', res) )
 
   const calidusConn = await oracledb.getConnection(oracleConfig)
-  console.log(calidusConn)
+  console.log({calidusConn})
   return 'wow'
 };
