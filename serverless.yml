@@ -33,7 +33,7 @@ custom:
         # - export LD_LIBRARY_PATH=/usr/lib/oracle/18.3/client64/lib
     # exclude: ['oracledb']
     watch:
-      ignore: ['.serverless', '.webpack', '.husky', 'node_modules']
+      ignore: ['.serverless', '.webpack', '.husky', 'node_modules', ]
 
 
 provider:
@@ -46,6 +46,7 @@ provider:
 
 
 package:
+  individually: true
   exclude:
     - serverless.yml
     - package-lock.json
